@@ -195,26 +195,34 @@ return {
   },
 
   -- the opts function can also be used to change the default opts:
-  --[[
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, "😄")
-    end,
-  },
-  --]]
-
-  -- or you can return new options to override all the defaults
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = function()
-      return {
-        --[[add your custom lualine config here]]
+      opts.options = {
+        theme = "ayu_light",
+        section_separators = { left = '', right = ''}
+      }
+      opts.sections = {
+        lualine_a = {},
+        lualine_b = {"branch"},
+        lualine_x = {"encoding", "filetype"}, 
+        lualine_y = {},
+        lualine_z = {}
       }
     end,
   },
+
+  -- or you can return new options to override all the defaults
+  --[[
+  {
+    "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
+    opts = {
+      icons_enabled = false
+    }
+  },
+  --]]
 
   { import = "lazyvim.plugins.extras.lang.tailwind" },
 
@@ -295,4 +303,45 @@ return {
       end
     end,
   },
+
+  {
+    "rcarriga/nvim-notify",
+    opts = {
+      render = "simple",
+      top_down = true,
+      stages = "static"
+    }
+  },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    cmd = "Neotree",
+    opts = {
+      default_component_configs = {
+        indent = {
+          padding = 2
+        }
+      },
+    }
+  },
+
+  {
+    "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    opts = {
+      options = {
+        themable = true,
+        style_preset = { 4, 2 }, -- 4 = no italic, 2 = minimal
+        offsets = {
+          -- doesn't seem to work
+          -- filetype = "neo-tree",
+          -- text = "File Explorer",
+          
+          text_align = "left",
+          -- separator = true,
+        },
+      },
+    }
+  }
 }

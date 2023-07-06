@@ -8,7 +8,14 @@ return {
         -- ...
       })
 
-      vim.cmd("colorscheme github_light")
+      vim.cmd("colorscheme github_light_high_contrast")
+
+      -- Changes color of VertSplit highlights; highlights
+      -- are Nvim's way of customizing colors
+      -- Highlight reference: https://github.com/nvim-neo-tree/neo-tree.nvim/blob/v2.x/doc/neo-tree.txt
+
+      vim.cmd([[hi VertSplit guifg=#A0A0A0 guibg=#FFFFFF]])
+      vim.cmd([[hi StatusLine guibg=#FFFFFF]])
     end,
   },
 }
