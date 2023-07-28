@@ -6,6 +6,12 @@ return {
     keys = function()
       return {}
     end,
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+      config = function()
+        require("luasnip.loaders.from_vscode").load({ paths = { "~/.config/nvim/snippets/" } })
+      end,
+    },
   },
   -- then: setup supertab in cmp
   {

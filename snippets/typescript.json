@@ -1,0 +1,59 @@
+{
+  "Create a export default function": {
+    "prefix": "edf",
+    "body": [
+      "export default function ${1:functionName}(${2:functionArgs}) {",
+      "\t${0}",
+      "}"
+    ],
+    "description": "Create a export default function"
+  },
+  "Create a export function": {
+    "prefix": "ef",
+    "body": [
+      "export function ${1:functionName}(${2:functionArgs}) {",
+      "\t${0}",
+      "}"
+    ],
+    "description": "Create a export function"
+  },
+  "Create a function": {
+    "prefix": "fu",
+    "body": ["function ${1:functionName}(${2:functionArgs}) {", "\t${0}", "}"],
+    "description": "Create a function"
+  },
+  "Create a export default const": {
+    "prefix": "edc",
+    "body": [
+      "const ${1:functionName} = (${2:functionArgs}) => {",
+      "\t${0}",
+      "}",
+      "",
+      "export default ${1}"
+    ],
+    "description": "Create a export default function"
+  },
+  "Create a export const": {
+    "prefix": "ec",
+    "body": [
+      "export const ${1:functionName} = (${2:functionArgs}) => {",
+      "\t${0}",
+      "}"
+    ],
+    "description": "Create a export function"
+  },
+  "Create a const function": {
+    "prefix": "cf",
+    "body": [
+      "const ${1:functionName} = (${2:functionArgs}) => {",
+      "\t${0}",
+      "}"
+    ],
+    "description": "Create a function"
+  },
+  "Create a console log": {
+    "prefix": "clg",
+    "body": ["console.log('${1:variable}', ${1})"],
+    "description": "Create a function"
+  }
+}

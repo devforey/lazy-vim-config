@@ -1,0 +1,29 @@
+{
+  "Create a Storybook story": {
+    "prefix": "story",
+    "body": [
+      "import type { Meta, StoryObj } from '@storybook/react';",
+      "import ${1:ComponentName} from './${1}';",
+      "",
+      "const meta: Meta<typeof ${1}> = {",
+      "\ttitle: '${2:Title}',",
+      "\tcomponent: ${1},",
+      "\ttags: ['autodocs'],",
+      "\targTypes: {",
+      "\t\t${3:argTypes}",
+      "\t},",
+      "};",
+      "",
+      "export default meta;",
+      "type Story = StoryObj<typeof ${1}>;",
+      "",
+      "export const ${4:StoryTitle}: Story = {",
+      "\targs: {",
+      "\t\t${5:args}",
+      "\t},",
+      "};",
+      ""
+    ],
+    "description": "Create a Storybook story"
+  }
+}
