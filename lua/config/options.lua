@@ -8,4 +8,5 @@ opt.fillchars = { fold = " " }
 opt.foldmethod = "indent"
 opt.foldenable = false
 opt.foldlevel = 99
+opt.swapfile = false
 vim.g.markdown_folding = 1 -- enable markdown folding

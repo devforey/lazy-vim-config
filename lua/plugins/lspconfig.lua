@@ -25,6 +25,8 @@ return {
     opts = {
       ---@type lspconfig.options
       servers = {
+        -- For projects with Angular
+        angularls = {},
         -- tsserver will be automatically installed with mason and loaded with lspconfig
         -- tsserver = {},
         cssls = {},
@@ -37,6 +39,7 @@ return {
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
       ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
+      autoformat = false,
       setup = {
         -- example to setup with typescript.nvim
         -- tsserver = function(_, opts)
@@ -52,6 +55,9 @@ return {
         --     end
         --   end)
         -- end,
+        angularls = function()
+          require("lspconfig").angularls.setup({})
+        end,
         tailwindcss = function(_, opts)
           local tw = require("lspconfig.server_configurations.tailwindcss")
           --- @param ft string

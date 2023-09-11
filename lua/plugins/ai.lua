@@ -1,3 +1,3 @@
 return {
-  { "aduros/ai.vim" },
+  { "github/copilot.vim" },
 }
