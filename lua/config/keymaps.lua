@@ -19,11 +19,12 @@ end
 map("n", "X", ":Bdelete<cr>", { desc = "Close Tab" })
 map("n", "cgn", "*#cgn", { desc = "Search and replace under cursor, press . for next occurrence" })
 map("n", "&", "^", { desc = "Move to beginning of the line" })
-map("i", "<C-l>", "<Plug>(copilot-next)", { desc = "Next Copilot Suggestion" })
-map("i", "<C-h>", "<Plug>(copilot-previous)", { desc = "Previous Copilot Suggestion" })
-map("i", "<C-p>", "<Plug>(copilot-suggest)", { desc = "Suggest Copilot Suggestion" })
+
+-- map("i", "<C-l>", "<Plug>(copilot-next)", { desc = "Next Copilot Suggestion" })
+-- map("i", "<C-h>", "<Plug>(copilot-previous)", { desc = "Previous Copilot Suggestion" })
+-- map("i", "<C-p>", "<Plug>(copilot-suggest)", { desc = "Suggest Copilot Suggestion" })
 
 -- Unmap default keybindings that starts with `s` to remove conflict for leap plugin
-vim.cmd('unmap sa')
-vim.cmd('unmap sd')
-vim.cmd('unmap sr')
+vim.cmd("unmap sa")
+vim.cmd("unmap sd")
+vim.cmd("unmap sr")
