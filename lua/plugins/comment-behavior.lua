@@ -1,5 +1,8 @@
 return {
+  -- Handles comment behaviors for files with different inner languages
   { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
+
+  -- Handles common comment behaviors (indentation, toggling, etc.)
   {
     "echasnovski/mini.comment",
     version = "*", -- Module mappings. Use `''` (empty string) to disable one.

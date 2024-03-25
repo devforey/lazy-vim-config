@@ -1,32 +1,92 @@
-return {
-  -- { "nvim-neotest/neotest-jest" },
-  { "nvim-neotest/neotest-vim-test" },
-  { "vim-test/vim-test" },
-  {
-    "nvim-neotest/neotest",
-    opts = {
-      adapters = {
-        -- "neotest-jest",
-        {
-          "neotest-vim-test",
-        },
-      },
-    },
-    keys = {
-      {
-        "<leader>tvn",
-        function()
-          vim.cmd("TestNearest")
-        end,
-        desc = "vim-test TestNearest",
-      },
-      {
-        "<leader>tvf",
-        function()
-          vim.cmd("TestFile")
-        end,
-        desc = "vim-test TestFile",
-      },
-    },
-  },
-}
+return {}
+
+-- local getcwd = function()
+--   local file = vim.fn.expand("%:p")
+--   -- to run inside a package root if exist
+--   if string.find(file, "/libs/") then
+--     return string.match(file, "(.-/[^/]+/)src")
+--   end
+--
+--   if string.find(file, "/apps/") then
+--     return string.match(file, "(.-/[^/]+/)src")
+--   end
+--   return vim.fn.getcwd()
+-- end
+--
+-- return {
+--   { "nvim-neotest/neotest-plenary" },
+--   {
+--     "nvim-neotest/neotest",
+--     dependencies = {
+--       "nvim-treesitter/nvim-treesitter",
+--       "haydenmeade/neotest-jest",
+--     },
+--     keys = {
+--       {
+--         "<leader>tl",
+--         function()
+--           require("neotest").run.run_last()
+--         end,
+--         desc = "Run Last Test",
+--       },
+--       {
+--         "<leader>tL",
+--         function()
+--           require("neotest").run.run_last({ strategy = "dap" })
+--         end,
+--         desc = "Debug Last Test",
+--       },
+--       {
+--         "<leader>tw",
+--         "<cmd>lua require('neotest').run.run({ jestCommand = 'jest --watch ' })<cr>",
+--         desc = "Run Watch",
+--       },
+--     },
+--     discovery = {
+--       enabled = false,
+--     },
+--     opts = function(_, opts)
+--       table.insert(
+--         opts.adapters,
+--         require("neotest-jest")({
+--           jestCommand = function()
+--             local cwd = vim.fn.getcwd()
+--             print("CWD: " .. cwd)
+--           end,
+--           -- gets config path from `npm run test` `--config` value or returns package root jest.config.ts
+--           jestConfigFile = function()
+--             local cwd = vim.fn.getcwd()
+--             local package_json_path = cwd .. "/package.json"
+--             local package_json_content = vim.fn.readfile(package_json_path)
+--
+--             -- Check if the file read is successful
+--             if next(package_json_content) == nil then
+--               print("package.json is empty or does not exist")
+--               return nil
+--             end
+--
+--             package_json_content = table.concat(package_json_content, "")
+--             local decoded_json = vim.fn.json_decode(package_json_content)
+--
+--             -- Check if scripts exists and specifically test script
+--             if decoded_json and decoded_json.scripts and decoded_json.scripts.test then
+--               local test_script = decoded_json.scripts.test
+--
+--               -- Pattern to match the --config argument
+--               local config_arg_pattern = "%-%-config%s([%w%./_-]+)"
+--               local config_path = test_script:match(config_arg_pattern)
+--               print("Config found" .. config_path)
+--
+--               return config_path
+--             else
+--               print("No test script found in package.json")
+--               return cwd .. "jest.config.ts"
+--             end
+--           end,
+--           env = { CI = true },
+--           cwd = getcwd,
+--         })
+--       )
+--     end,
+--   },
+-- }

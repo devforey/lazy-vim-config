@@ -1,4 +1,5 @@
 return {
+  -- Wraps selected target with provided wrapper (quotations, parenthesis, etc.)
   {
     "echasnovski/mini.surround",
     version = "*",

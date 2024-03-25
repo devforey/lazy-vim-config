@@ -1,4 +1,29 @@
 return {
+  -- Fix deletion of buffers to inline with common IDEs
+  { "famiu/bufdelete.nvim" },
+
+  -- Show current line position with theme
+  {
+    "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    opts = {
+      options = {
+        themable = true,
+        style_preset = { 4, 2 }, -- 4 = no italic, 2 = minimal
+        offsets = {
+          -- doesn't seem to work
+          -- filetype = "neo-tree",
+          -- text = "File Explorer",
+
+          text_align = "left",
+          -- separator = true,
+        },
+      },
+    },
+  },
+
+  -- Code highlights (highlight usage of variable when pointer is in the variable, etc.)
   {
     "RRethy/vim-illuminate",
     opts = {
@@ -47,5 +72,24 @@ return {
       -- min_count_to_highlight: minimum number of matches required to perform highlighting
       min_count_to_highlight = 1,
     },
+  },
+
+  -- Show git status, file info, etc. at the bottom
+  {
+    "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
+    opts = function(_, opts)
+      opts.options = {
+        theme = "ayu_light",
+        section_separators = { left = "", right = "" },
+      }
+      opts.sections = {
+        lualine_a = {},
+        lualine_b = { "branch" },
+        lualine_x = { "encoding", "filetype" },
+        lualine_y = {},
+        lualine_z = {},
+      }
+    end,
   },
 }
