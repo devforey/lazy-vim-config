@@ -3,25 +3,25 @@ return {
   { "famiu/bufdelete.nvim" },
 
   -- Show current line position with theme
-  {
-    "akinsho/bufferline.nvim",
-    version = "*",
-    dependencies = "nvim-tree/nvim-web-devicons",
-    opts = {
-      options = {
-        themable = true,
-        style_preset = { 4, 2 }, -- 4 = no italic, 2 = minimal
-        offsets = {
-          -- doesn't seem to work
-          -- filetype = "neo-tree",
-          -- text = "File Explorer",
-
-          text_align = "left",
-          -- separator = true,
-        },
-      },
-    },
-  },
+  -- {
+  --   "akinsho/bufferline.nvim",
+  --   version = "*",
+  --   dependencies = "nvim-tree/nvim-web-devicons",
+  --   opts = {
+  --     options = {
+  --       themable = true,
+  --       style_preset = { 4, 2 }, -- 4 = no italic, 2 = minimal
+  --       offsets = {
+  --         -- doesn't seem to work
+  --         -- filetype = "neo-tree",
+  --         -- text = "File Explorer",
+  --
+  --         text_align = "left",
+  --         -- separator = true,
+  --       },
+  --     },
+  --   },
+  -- },
 
   -- Code highlights (highlight usage of variable when pointer is in the variable, etc.)
   {
